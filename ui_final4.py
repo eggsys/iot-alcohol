@@ -12,6 +12,19 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 
 class Ui_Form(object):
+
+    def clicked_back(self, nd):
+        print("click : go back")
+        Form.pageX = - 1
+
+    def clicked(self):
+        print(Form.pageX)
+        print("click : go Next")
+        Form.pageX = Form.pageX + 1
+        print(Form.pageX)
+
+        self.stackedWidget.setCurrentIndex(Form.pageX)
+
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.setEnabled(True)
