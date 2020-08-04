@@ -12,7 +12,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 
 class Ui_Form(object):
-
+#button functions
     def clicked_back(self, nd):
         print("click : go back")
         Form.pageX = - 1
