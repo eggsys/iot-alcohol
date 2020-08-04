@@ -1,0 +1,25 @@
+<RCC>
+  <qresource prefix="newPrefix">
+    <file>02.jpg</file>
+  </qresource>
+  <qresource prefix="bg1">
+    <file>1.gif</file>
+  </qresource>
+  <qresource prefix="blow">
+    <file>05.gif</file>
+  </qresource>
+  <qresource prefix="bg2">
+    <file>00.jpg</file>
+  </qresource>
+  <qresource prefix="ิ"/>
+  <qresource prefix="scan">
+    <file>03.gif</file>
+  </qresource>
+  <qresource prefix="image">
+    <file>users-vector-icon-png_260862.jpg</file>
+  </qresource>
+  <qresource prefix="fingerprint">
+    <file>SeekPng.com_fingerprint-scanner-png_2697983.png</file>
+    <file>fingerprint-scanning-line-icon-vector-19563770.jpg</file>
+  </qresource>
+</RCC>
