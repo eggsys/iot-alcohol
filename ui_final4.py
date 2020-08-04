@@ -20,9 +20,16 @@ class Ui_Form(object):
     def clicked(self):
         print(Form.pageX)
         print("click : go Next")
-        Form.pageX = Form.pageX + 1
+        Form.pageX +=  1
         print(Form.pageX)
 
+        self.stackedWidget.setCurrentIndex(Form.pageX)
+
+    def clicked_end(self):
+        print(Form.pageX)
+        print("click end button")
+        Form.pageX = 0
+        print(Form.pageX)
         self.stackedWidget.setCurrentIndex(Form.pageX)
 
     def setupUi(self, Form):
@@ -40,13 +47,19 @@ class Ui_Form(object):
         self.label_bg1.setPixmap(QtGui.QPixmap("1.gif"))
         self.label_bg1.setScaledContents(True)
         self.label_bg1.setObjectName("label_bg1")
+
         self.Button_01 = QtWidgets.QPushButton(self.page)
         self.Button_01.setGeometry(QtCore.QRect(0, 0, 1024, 600))
         self.Button_01.setStyleSheet("\n"
-"background-color : rgba(0, 0, 0, 50%)")
+"background-color : rgba(0, 0, 0, 0%)")
         self.Button_01.setText("")
         self.Button_01.setObjectName("Button_01")
+        self.Button_01.clicked.connect(self.clicked)
+
+
         self.stackedWidget.addWidget(self.page)
+
+
         self.page_2 = QtWidgets.QWidget()
         self.page_2.setObjectName("page_2")
         self.label_bg2 = QtWidgets.QLabel(self.page_2)
@@ -58,9 +71,12 @@ class Ui_Form(object):
         self.Button_2 = QtWidgets.QPushButton(self.page_2)
         self.Button_2.setGeometry(QtCore.QRect(760, 480, 201, 61))
         self.Button_2.setStyleSheet("\n"
-"background-color : rgba(0, 0, 0, 50%)")
+"background-color : rgba(0, 0, 0, 0%)")
         self.Button_2.setText("")
         self.Button_2.setObjectName("Button_2")
+        self.Button_2.clicked.connect(self.clicked)
+
+
         self.stackedWidget.addWidget(self.page_2)
         self.page_3 = QtWidgets.QWidget()
         self.page_3.setObjectName("page_3")
@@ -73,16 +89,21 @@ class Ui_Form(object):
         self.Button_3 = QtWidgets.QPushButton(self.page_3)
         self.Button_3.setGeometry(QtCore.QRect(80, 220, 381, 131))
         self.Button_3.setStyleSheet("\n"
-"background-color : rgba(0, 0, 0, 50%)")
+"background-color : rgba(0, 0, 0, 0%)")
         self.Button_3.setText("")
         self.Button_3.setObjectName("Button_3")
+        self.Button_3.clicked.connect(self.clicked)
+
         self.Button_4 = QtWidgets.QPushButton(self.page_3)
         self.Button_4.setGeometry(QtCore.QRect(570, 220, 371, 131))
         self.Button_4.setStyleSheet("\n"
-"background-color : rgba(0, 0, 0, 50%)")
+"background-color : rgba(0, 0, 0, 0%)")
         self.Button_4.setText("")
         self.Button_4.setObjectName("Button_4")
+        self.Button_4.clicked.connect(self.clicked)
         self.stackedWidget.addWidget(self.page_3)
+
+
         self.page_4 = QtWidgets.QWidget()
         self.page_4.setObjectName("page_4")
         self.label_bg4 = QtWidgets.QLabel(self.page_4)
@@ -94,16 +115,23 @@ class Ui_Form(object):
         self.Button_5 = QtWidgets.QPushButton(self.page_4)
         self.Button_5.setGeometry(QtCore.QRect(580, 60, 381, 131))
         self.Button_5.setStyleSheet("\n"
-"background-color : rgba(0, 0, 0, 50%)")
+"background-color : rgba(0, 0, 0, 0%)")
         self.Button_5.setText("")
         self.Button_5.setObjectName("Button_5")
+        self.Button_5.clicked.connect(self.clicked)
+
         self.Button_6 = QtWidgets.QPushButton(self.page_4)
         self.Button_6.setGeometry(QtCore.QRect(590, 410, 381, 131))
         self.Button_6.setStyleSheet("\n"
-"background-color : rgba(0, 0, 0, 50%)")
+"background-color : rgba(0, 0, 0, 0%)")
         self.Button_6.setText("")
         self.Button_6.setObjectName("Button_6")
+        self.Button_6.clicked.connect(self.clicked)
         self.stackedWidget.addWidget(self.page_4)
+
+
+
+
         self.page_5 = QtWidgets.QWidget()
         self.page_5.setObjectName("page_5")
         self.label_bg5 = QtWidgets.QLabel(self.page_5)
@@ -115,10 +143,13 @@ class Ui_Form(object):
         self.Button_7 = QtWidgets.QPushButton(self.page_5)
         self.Button_7.setGeometry(QtCore.QRect(0, 0, 1024, 600))
         self.Button_7.setStyleSheet("\n"
-"background-color : rgba(0, 0, 0, 50%)")
+"background-color : rgba(0, 0, 0, 0%)")
         self.Button_7.setText("")
         self.Button_7.setObjectName("Button_7")
+        self.Button_7.clicked.connect(self.clicked)
         self.stackedWidget.addWidget(self.page_5)
+
+
         self.page_6 = QtWidgets.QWidget()
         self.page_6.setObjectName("page_6")
         self.label_bg6 = QtWidgets.QLabel(self.page_6)
@@ -189,10 +220,13 @@ class Ui_Form(object):
         self.Button_8 = QtWidgets.QPushButton(self.page_6)
         self.Button_8.setGeometry(QtCore.QRect(0, 0, 1024, 600))
         self.Button_8.setStyleSheet("\n"
-"background-color : rgba(0, 0, 0, 50%)")
+"background-color : rgba(0, 0, 0, 0%)")
         self.Button_8.setText("")
         self.Button_8.setObjectName("Button_8")
+        self.Button_8.clicked.connect(self.clicked)
         self.stackedWidget.addWidget(self.page_6)
+
+
         self.page_7 = QtWidgets.QWidget()
         self.page_7.setObjectName("page_7")
         self.label_bg7 = QtWidgets.QLabel(self.page_7)
@@ -204,10 +238,13 @@ class Ui_Form(object):
         self.Button_9 = QtWidgets.QPushButton(self.page_7)
         self.Button_9.setGeometry(QtCore.QRect(0, 0, 1024, 600))
         self.Button_9.setStyleSheet("\n"
-"background-color : rgba(0, 0, 0, 50%)")
+"background-color : rgba(0, 0, 0, 0%)")
         self.Button_9.setText("")
         self.Button_9.setObjectName("Button_9")
+        self.Button_9.clicked.connect(self.clicked)
         self.stackedWidget.addWidget(self.page_7)
+
+
         self.page_8 = QtWidgets.QWidget()
         self.page_8.setObjectName("page_8")
         self.label_bg8 = QtWidgets.QLabel(self.page_8)
@@ -276,10 +313,14 @@ class Ui_Form(object):
         self.Button_10 = QtWidgets.QPushButton(self.page_8)
         self.Button_10.setGeometry(QtCore.QRect(-10, 0, 1024, 600))
         self.Button_10.setStyleSheet("\n"
-"background-color : rgba(0, 0, 0, 50%)")
+"background-color : rgba(0, 0, 0, 0%)")
         self.Button_10.setText("")
         self.Button_10.setObjectName("Button_10")
+        self.Button_10.clicked.connect(self.clicked)
         self.stackedWidget.addWidget(self.page_8)
+
+
+
         self.page_9 = QtWidgets.QWidget()
         self.page_9.setObjectName("page_9")
         self.label_bg9 = QtWidgets.QLabel(self.page_9)
@@ -297,10 +338,13 @@ class Ui_Form(object):
         self.Button_11 = QtWidgets.QPushButton(self.page_9)
         self.Button_11.setGeometry(QtCore.QRect(-10, 0, 1024, 600))
         self.Button_11.setStyleSheet("\n"
-"background-color : rgba(0, 0, 0, 50%)")
+"background-color : rgba(0, 0, 0, 00%)")
         self.Button_11.setText("")
         self.Button_11.setObjectName("Button_11")
+        self.Button_11.clicked.connect(self.clicked)
         self.stackedWidget.addWidget(self.page_9)
+
+
         self.page_10 = QtWidgets.QWidget()
         self.page_10.setObjectName("page_10")
         self.label_bg10 = QtWidgets.QLabel(self.page_10)
@@ -375,13 +419,15 @@ class Ui_Form(object):
         self.Button_12 = QtWidgets.QPushButton(self.page_10)
         self.Button_12.setGeometry(QtCore.QRect(0, 0, 1024, 600))
         self.Button_12.setStyleSheet("\n"
-"background-color : rgba(0, 0, 0, 50%)")
+"background-color : rgba(0, 0, 0, 0%)")
         self.Button_12.setText("")
         self.Button_12.setObjectName("Button_12")
+        self.Button_12.clicked.connect(self.clicked_end)
         self.stackedWidget.addWidget(self.page_10)
 
+        Form.pageX = 0
         self.retranslateUi(Form)
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(Form.pageX)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
     def retranslateUi(self, Form):
