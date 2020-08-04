@@ -10,6 +10,9 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtGui import QMovie
+from playsound import playsound
+from threading import Thread
+import time
 
 
 class Ui_Form(object):
@@ -23,8 +26,10 @@ class Ui_Form(object):
         print("click : go Next")
         Form.pageX +=  1
         print(Form.pageX)
+        #playsound('success.mp3')
 
         self.stackedWidget.setCurrentIndex(Form.pageX)
+
 
     def clicked_end(self):
         print(Form.pageX)
@@ -32,6 +37,9 @@ class Ui_Form(object):
         Form.pageX = 0
         print(Form.pageX)
         self.stackedWidget.setCurrentIndex(Form.pageX)
+
+    def play(self):
+        playsound('welcome.mp3')
 
     def setupUi(self, Form):
         Form.setObjectName("Form")
@@ -49,6 +57,7 @@ class Ui_Form(object):
         self.label_bg1.setScaledContents(True)
         self.label_bg1.setObjectName("label_bg1")
 
+
         self.Button_01 = QtWidgets.QPushButton(self.page)
         self.Button_01.setGeometry(QtCore.QRect(0, 0, 1024, 600))
         self.Button_01.setStyleSheet("\n"
@@ -56,12 +65,15 @@ class Ui_Form(object):
         self.Button_01.setText("")
         self.Button_01.setObjectName("Button_01")
         self.Button_01.clicked.connect(self.clicked)
+        print("page1 process")
 
 
         self.stackedWidget.addWidget(self.page)
 
 
         self.page_2 = QtWidgets.QWidget()
+
+
         self.page_2.setObjectName("page_2")
         self.label_bg2 = QtWidgets.QLabel(self.page_2)
         self.label_bg2.setGeometry(QtCore.QRect(0, 0, 1021, 601))
@@ -77,6 +89,10 @@ class Ui_Form(object):
         self.Button_2.setObjectName("Button_2")
         self.Button_2.clicked.connect(self.clicked)
 
+        print("page2 process")
+
+        #self.thr1 = Thread(target=self.play)
+        #self.thr1.start()
 
         self.stackedWidget.addWidget(self.page_2)
         self.page_3 = QtWidgets.QWidget()
@@ -103,7 +119,7 @@ class Ui_Form(object):
         self.Button_4.setObjectName("Button_4")
         self.Button_4.clicked.connect(self.clicked)
         self.stackedWidget.addWidget(self.page_3)
-
+        print("page3 process")
 
         self.page_4 = QtWidgets.QWidget()
         self.page_4.setObjectName("page_4")
@@ -446,6 +462,7 @@ class Ui_Form(object):
         QtCore.QMetaObject.connectSlotsByName(Form)
 
     def retranslateUi(self, Form):
+        print("retranslate 1 process")
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
         self.device_type.setWhatsThis(_translate("Form", "<html><head/><body><p><span style=\" font-size:22pt;\">Device_type</span></p></body></html>"))
@@ -463,6 +480,7 @@ class Ui_Form(object):
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:22pt; color:#ffffff;\">Device Type</span></p></body></html>"))
         self.Emp_name.setText(_translate("Form", "Emp_Name"))
+        print("retranslate 2 process")
         self.radio_in.setText(_translate("Form", "In"))
         self.Dept.setHtml(_translate("Form", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
