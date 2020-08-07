@@ -1,0 +1,32 @@
+import pymysql.cursors
+
+# Connect to the database
+connection = pymysql.connect(host='localhost',
+                             user='root',
+                             password='',
+                             db='pymysql',
+                             charset='utf8mb4',
+                             cursorclass=pymysql.cursors.DictCursor)
+
+email = input("Please enter your email:\n")
+#email = "egg.rkt2@gmail.com"
+pwd = " Rungkrit-000888"
+try:
+    with connection.cursor() as cursor:
+        # Create a new record
+        sql = "INSERT INTO `users` (`email`, `password`) VALUES (%s, %s)"
+        cursor.execute(sql, (email, pwd))
+
+    # connection is not autocommit by default. So you must commit to save
+    # your changes.
+    connection.commit()
+
+    with connection.cursor() as cursor:
+        # Read a single record
+        sql = "SELECT * FROM `users` order by id DESC"
+        #sql = "SELECT `id`, `password` FROM `users` WHERE `email`=%s"
+        cursor.execute(sql)
+        result = cursor.fetchmany(5)
+        print(result)
+finally:
+    connection.close()
