@@ -59,9 +59,9 @@ class Ui_Form(object):
 
 
         self.Button_01 = QtWidgets.QPushButton(self.page)
-        self.Button_01.setGeometry(QtCore.QRect(0, 0, 1024, 600))
+        self.Button_01.setGeometry(QtCore.QRect(760, 480, 200, 60))
         self.Button_01.setStyleSheet("\n"
-"background-color : rgba(0, 0, 0, 0%)")
+"background-color : rgba(0, 200, 0, 20%)")
         self.Button_01.setText("")
         self.Button_01.setObjectName("Button_01")
         self.Button_01.clicked.connect(self.clicked)
